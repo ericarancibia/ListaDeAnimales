@@ -1,4 +1,3 @@
-//CLASE PROPIETARIO
 class Propietario {
 	constructor(nombre, direccion, telefono) {
 		this._nombre = nombre;
@@ -27,8 +26,7 @@ class Propietario {
 		return `Nombre Dueño(a): <strong>${this.nombre}</strong>; Domicilio: <strong>${this.direccion}</strong>; Contacto: <strong>${this.telefono}</strong>.`;
 	}
 }
-//
-//CLASE ANIMAL
+
 class Animal extends Propietario {
 	constructor(nombre, direccion, telefono, tipo) {
 		super(nombre, direccion, telefono);
@@ -41,8 +39,7 @@ class Animal extends Propietario {
 		this._tipo = newTipo;
 	}
 }
-//
-//CLASE MASCOTA
+
 class Mascota extends Animal {
 	constructor(nombre, direccion, telefono, tipo, nombreMascota, enfermedad) {
 		super(nombre, direccion, telefono, tipo);
@@ -62,7 +59,7 @@ class Mascota extends Animal {
 		this._enfermedad = newEnfermedad;
 	}
 }
-//CLICK
+
 let registro = document.getElementById('registrar');
 registro.addEventListener('click', function (event) {
 	event.preventDefault();
@@ -73,8 +70,7 @@ registro.addEventListener('click', function (event) {
 	const tipo = perroData.tipo;
 	const nombreMascota = perroData.nombreMascota;
 	const enfermedad = perroData.enfermedad;
-	//
-	//VALIDADOR DE CAMPOS
+
 	if (
 		nombre != '' &&
 		direccion != '' &&
@@ -91,8 +87,7 @@ registro.addEventListener('click', function (event) {
 		alert(`Por favor, completa todos los datos`);
 	}
 });
-//
-//REGISTRO
+
 function registrando() {
 	let nombre = document.getElementById('propietario').value;
 	let direccion = document.getElementById('direccion').value;
@@ -100,7 +95,6 @@ function registrando() {
 	let tipo = document.getElementById('tipo').value;
 	let nombreMascota = document.getElementById('nombreMascota').value;
 	let enfermedad = document.getElementById('enfermedad').value;
-	//SE OBTIENEN EL NOMBRE Y LA RAZA
 	let perrito = new Mascota(nombre, direccion, telefono, tipo, nombreMascota, enfermedad);
 	return perrito;
 }
